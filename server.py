@@ -8,11 +8,24 @@ import datetime
 app = Flask(__name__)
 ask = Ask(app, '/alexa_transloc')
 
+@app.route('/')
+def testing():
+	stop_id_to_name(4195822)
+	print(json.dumps(stop_name_map, indent=4))
+	return stop_times_to_english(4195822)
+
+
 @ask.launch
 def launch():
-    welcome_text = render_template('welcome')
-    help_text = render_template('help')
-    return question(welcome_text).reprompt(help_text)
+	return statement(stop_times_to_english(4146366))
+
+    #welcome_text = render_template('welcome')
+    #help_text = render_template('help')
+    #return question(welcome_text).reprompt(help_text)
+
+@ask.intent('SupportedStopsIntent')
+def supported_stops():
+	return 1
 
 @ask.intent('AMAZON.HelpIntent')
 def help():
@@ -37,6 +50,28 @@ def cancel():
 def session_ended():
     return "{}", 200
 
+
+##################################
+@app.template_filter()
+def humanize_times(times):
+    english_string = ""
+    times = times[:3]
+
+    for t in times[:-1]:
+        if t < 60:
+            english_string += "less than a minute, "
+        else:
+            english_string += str(t // 60) + " minutes, "
+
+    if english_string != "":
+        english_string += "and "
+
+    if times[-1] < 60:
+        english_string += " less than a minute."
+    else:
+        english_string += str(times[-1] // 60) + " minutes."
+
+    return english_string
 
 #################### API HANDLING ###############################################
 
@@ -89,7 +124,7 @@ route_name_map = {}
 def route_id_to_name(route_id):
     if len(route_name_map) == 0:
         resp = get_routes()
-        for route in resp['data'][AGENCY_ID]:
+        for route in resp['data'][str(AGENCY_ID)]:
             name = route["long_name"]
             r_id = route["route_id"]
             route_name_map[str(r_id)] = name
@@ -140,3 +175,15 @@ def stop_times(stop_id):
             stop_times[route_name].append(arrival_delta.seconds)
 
     return stop_times
+
+def stop_times_to_english(stop_id):
+	st = stop_times(stop_id)
+
+	ret = ""
+	for route in st:
+		ret += render_template('stop_info', route_name=route, arrival_times=st[route]);
+
+	return ret
+
+if __name__ == "__main__":
+        app.run()
