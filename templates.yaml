@@ -16,9 +16,16 @@ tide_info: |
     and will peak at about {{ tideinfo.second_high_tide_height | humanize_height }}
 
 help: |
-    I can lead you through providing a city and day of the week to get tide information, or you can simply open
-    Tide Pooler and ask a question like, get tide information for Seattle on Saturday. For a list of supported
-    cities, ask what cities are supported. Which city would you like tide information for?
+    I can give you information about a specific stop, or you can set a default stop.
+    For a list of nearby stops, ask which stops are nearby.
+
+list_stops: |
+    Nearby stops include: {{ stops }}
+    Which stop would you like information for?
+
+list_stops_reprompt:
+    Which stop would you like information for?
+
 
 list_cities: |
     Currently, I know tide information for these coastal cities: {{ cities }}
