@@ -17,7 +17,9 @@ def testing():
 
 @ask.launch
 def launch():
-	return statement(stop_times_to_english(4146366))
+	# was a stop specified? if not, grab default stop. 
+
+	return statement(stop_times_to_english(4188200))
 
     #welcome_text = render_template('welcome')
     #help_text = render_template('help')
@@ -75,9 +77,14 @@ def humanize_times(times):
 
 #################### API HANDLING ###############################################
 
-desired_stops = [
-    4188200, # "Campus Dr at Swift Ave (Westbound) (12007)"
-    4195822, # "Swift Ave at 300 Swift (13009)"
+important_stops = [
+	4188200, # "Campus Dr at Swift Ave (Westbound) (12007)"
+	4195822, # "Swift Ave at 300 Swift (13009)"
+	4146366, # "Duke Chapel"
+			 # "Campus Dr at Swift Ave (Eastbound) (12007)"
+			 # "East Campus Bus Stop"
+			 # "Smith Warehouse"
+			 # "Stops along campus drive & central."
 ]
 
 AGENCY_ID = 176 # Duke
@@ -149,6 +156,9 @@ def stop_arrivals(stop_id):
 
     route_map = {}
 
+    if len(arrivals['data']) < 1:
+    	return {} 
+
     for arrival in arrivals['data'][0]['arrivals']:
         arrival_route = arrival['route_id']
         arrival_time  = arrival['arrival_at']
@@ -178,8 +188,11 @@ def stop_times(stop_id):
 
 def stop_times_to_english(stop_id):
 	st = stop_times(stop_id)
-
 	ret = ""
+
+	if len(st) < 1:
+		ret = "It doesn't look like any busses are coming to that stop right now."
+
 	for route in st:
 		ret += render_template('stop_info', route_name=route, arrival_times=st[route]);
 
