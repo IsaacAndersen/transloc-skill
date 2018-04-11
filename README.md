@@ -1,7 +1,7 @@
 # transloc-skill
 Alexa skill for Duke Bus times.
 
-To run locally:
+## To run locally:
 
 Launch the Flask server: 
 ```
@@ -22,3 +22,23 @@ Web Interface                 http://127.0.0.1:4040
 Forwarding                    http://<sessionid>.ngrok.io -> localhost:5000        
 Forwarding                    https://<sessionid>.ngrok.io -> localhost:5000  
 ```
+
+## How to use the skill
+
+At this point, you'll have a running developer build. On your personal Alexa or through the developer console you can say things like:
+
+- Launch Blue Devil Buses
+- Ask Blue Devil Buses for West Campus Bus Stop
+
+to request information. I've built out a really primitive interaction model that gives information for a certain stop.
+
+## Roadmap
+
+I'm not sure how much work I'll put into this. In it's current state it serves its purposes pretty well. In the future it might be fun to build out some of the following features.
+
+- Alarm (e.g. notify me when a bus is 3 minutes from the stop..)
+- Default stop settings (Amazon doesn't let you store information across sessions. I think this would involve a custom database w/ userID's and user preferences which is more trouble than it's worth.)
+- Nearest stops, right now the skill just has a hand-selected list of popular stops. It might be more useful to grab the Alexa's location using [] and list the nearest stops. 
+- More Transit agencies, right now the skill is bespoke to Duke transit. It would be trivial to add more schools or generalize the app, but this would complicate the interaction model. 
+
+
