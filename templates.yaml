@@ -1,30 +1,24 @@
 welcome: |
-    <speak>
-        Hi {{ name }}! Welcome to the TransLoc bus app. 
-    </speak>
+    Which stop would you like information for?
 
 stop_info: |
-    There is a {{ route_name }} coming in {{ arrival_times | humanize_times}}. 
+    At {{ stop_name }},
 
-tide_info: |
-    {{ date | humanize_date }} in {{ city }}, the first high tide will be around
-    {{ tideinfo.first_high_tide_time | humanize_time }}, and will peak at about
-    {{ tideinfo.first_high_tide_height | humanize_height }}, followed by a low tide around
-    {{ tideinfo.low_tide_time | humanize_time }}, that will be about
-    {{ tideinfo.low_tide_height | humanize_height }}.
-    The second high tide will be around {{ tideinfo.second_high_tide_time | humanize_time }},
-    and will peak at about {{ tideinfo.second_high_tide_height | humanize_height }}
+route_info: |
+    There is a {{ route_name }} coming in {{ arrival_times | humanize_times}}
+
+stop_info_empty: |
+    It doesn't look like there are any busses coming to {{ stop_name }} right now.
 
 help: |
-    I can give you information about a specific stop, or you can set a default stop.
-    For a list of nearby stops, ask which stops are nearby.
+    For a list of supported stops, ask me to list stops. 
 
 list_stops: |
-    Nearby stops include: {{ stops }}
-    Which stop would you like information for?
+    Supported stops include: {{ stops | humanize_stops }}
+    Which stop would you like to set?
 
 list_stops_reprompt:
-    Which stop would you like information for?
+    Which stop would you like to set?
 
 api_problem: Sorry, the TransLoc tracking system is experiencing a problem. Please try again later.
 

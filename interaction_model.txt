@@ -1,0 +1,198 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "blue devil buses",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": [
+                        "stop",
+                        "cancel",
+                        "exit",
+                        "quit"
+                    ]
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": [
+                        "show stops",
+                        "help",
+                        "list stops"
+                    ]
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": [
+                        "cancel",
+                        "ok",
+                        "got it",
+                        "quit",
+                        "stop"
+                    ]
+                },
+                {
+                    "name": "ListStopsIntent",
+                    "slots": [],
+                    "samples": [
+                        "what's that",
+                        "sorry",
+                        "list bus stops",
+                        "which supported stops are there",
+                        "list supported stops",
+                        "tell me which stops",
+                        "list nearby stops",
+                        "which stops are nearby",
+                        "what stops are supported",
+                        "list stops",
+                        "Which stops are available"
+                    ]
+                },
+                {
+                    "name": "SelectStopIntent",
+                    "slots": [
+                        {
+                            "name": "desired_stop",
+                            "type": "DukeBusStops"
+                        }
+                    ],
+                    "samples": [
+                        "for {desired_stop}",
+                        "get {desired_stop}",
+                        "i'm at {desired_stop}",
+                        "i want {desired_stop}",
+                        "choose {desired_stop}",
+                        "pick {desired_stop}",
+                        "set {desired_stop}"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "DukeBusStops",
+                    "values": [
+                        {
+                            "id": "4098278",
+                            "name": {
+                                "value": "Anderson Street at Lewis Street"
+                            }
+                        },
+                        {
+                            "id": "4098274",
+                            "name": {
+                                "value": "Anderson Street at Mill Village"
+                            }
+                        },
+                        {
+                            "id": "4098294",
+                            "name": {
+                                "value": "Alexander Avenue at Pace Street Eastbound"
+                            }
+                        },
+                        {
+                            "id": "4192460",
+                            "name": {
+                                "value": "Oregon Street at Pace Street"
+                            }
+                        },
+                        {
+                            "id": "4188204",
+                            "name": {
+                                "value": "Nasher Westbound",
+                                "synonyms": [
+                                    "The Nasher",
+                                    "Nasher"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "4195826",
+                            "name": {
+                                "value": "Campus Drive at Nasher Eastbound"
+                            }
+                        },
+                        {
+                            "id": "4188214",
+                            "name": {
+                                "value": "Swift Avenue Eastbound",
+                                "synonyms": [
+                                    "Swift Eastbound"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "4197174",
+                            "name": {
+                                "value": "Devil's Bistro"
+                            }
+                        },
+                        {
+                            "id": "4158230",
+                            "name": {
+                                "value": "Smith Warehouse Westbound",
+                                "synonyms": [
+                                    "Smith Westbound"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "4195814",
+                            "name": {
+                                "value": "Smith Warehouse Eastbound",
+                                "synonyms": [
+                                    "Smith Eastbound"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "4117202",
+                            "name": {
+                                "value": "East Campus Quad",
+                                "synonyms": [
+                                    "East",
+                                    "East Campus",
+                                    "East Campus Bus Stop"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "4146366",
+                            "name": {
+                                "value": "Duke Chapel",
+                                "synonyms": [
+                                    "West",
+                                    "West Bus Stop",
+                                    "West Campus",
+                                    "West Campus Bus Stop"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "4195822",
+                            "name": {
+                                "value": "Swift Avenue at 300 Swift",
+                                "synonyms": [
+                                    "swift",
+                                    "swift bus stop",
+                                    "Swift",
+                                    "300 Swift"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "4188202",
+                            "name": {
+                                "value": "Campus Drive at Swift Avenue Eastbound"
+                            }
+                        },
+                        {
+                            "id": "4188200",
+                            "name": {
+                                "value": "Campus Drive at Swift Ave Westbound"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
