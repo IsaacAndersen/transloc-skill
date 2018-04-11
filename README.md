@@ -38,7 +38,7 @@ I'm not sure how much work I'll put into this. In it's current state it serves i
 
 - Alarm (e.g. notify me when a bus is 3 minutes from the stop..)
 - Default stop settings (Amazon doesn't let you store information across sessions. I think this would involve a custom database w/ userID's and user preferences which is more trouble than it's worth.)
-- Nearest stops, right now the skill just has a hand-selected list of popular stops. It might be more useful to grab the Alexa's location using [] and list the nearest stops. 
+- Nearest stops, right now the skill just has a hand-selected list of popular stops. It might be more useful to grab the Alexa's location using the Device Address API and list the nearest stops. 
 - More Transit agencies, right now the skill is bespoke to Duke transit. It would be trivial to add more schools or generalize the app, but this would complicate the interaction model. 
 
 
