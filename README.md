@@ -30,7 +30,9 @@ At this point, you'll have a running developer build. On your personal Alexa or 
 - Launch Blue Devil Buses
 - Ask Blue Devil Buses for West Campus Bus Stop
 
-to request information. I've built out a really primitive interaction model that gives information for a certain stop.
+to request information. I've built out a really primitive interaction model that gives information for a certain stop. You can also deploy to AWS. There's a pretty good tutorial [here](https://developer.amazon.com/blogs/post/8e8ad73a-99e9-4c0f-a7b3-60f92287b0bf/New-Alexa-Tutorial-Deploy-Flask-Ask-Skills-to-AWS-Lambda-with-Zappa) that'll get you most of the way there. 
+
+I've already deployed the skill to the store under the utterance "Duke Bus Times." Feel free to check it out!
 
 ## Roadmap
 
