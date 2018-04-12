@@ -1,29 +1,25 @@
 {
     "interactionModel": {
         "languageModel": {
-            "invocationName": "blue devil buses",
+            "invocationName": "duke bus times",
             "intents": [
                 {
                     "name": "AMAZON.CancelIntent",
                     "samples": [
-                        "stop",
-                        "cancel",
-                        "exit",
-                        "quit"
+                        "cancel"
                     ]
                 },
                 {
                     "name": "AMAZON.HelpIntent",
                     "samples": [
-                        "show stops",
-                        "help",
-                        "list stops"
+                        "help"
                     ]
                 },
                 {
                     "name": "AMAZON.StopIntent",
                     "samples": [
-                        "cancel",
+                        "alexa stop",
+                        "exit",
                         "ok",
                         "got it",
                         "quit",
@@ -34,6 +30,11 @@
                     "name": "ListStopsIntent",
                     "slots": [],
                     "samples": [
+                        "get stops",
+                        "list bus stop",
+                        "bus stops",
+                        "show",
+                        "list",
                         "what's that",
                         "sorry",
                         "list bus stops",
@@ -56,6 +57,17 @@
                         }
                     ],
                     "samples": [
+                        "{desired_stop} bus stop",
+                        "{desired_stop} stop",
+                        "about {desired_stop} stop",
+                        "about {desired_stop} bus stop",
+                        "about  {desired_stop}",
+                        "the {desired_stop}",
+                        "when will {desired_stop}",
+                        "when is {desired_stop}",
+                        "when {desired_stop} is coming",
+                        "when {desired_stop}",
+                        "about {desired_stop} ",
                         "for {desired_stop}",
                         "get {desired_stop}",
                         "i'm at {desired_stop}",
@@ -73,25 +85,41 @@
                         {
                             "id": "4098278",
                             "name": {
-                                "value": "Anderson Street at Lewis Street"
+                                "value": "Anderson Street at Lewis Street",
+                                "synonyms": [
+                                    "Anderson Street"
+                                ]
                             }
                         },
                         {
                             "id": "4098274",
                             "name": {
-                                "value": "Anderson Street at Mill Village"
+                                "value": "Anderson Street at Mill Village",
+                                "synonyms": [
+                                    "Anderson",
+                                    "Anderson Street"
+                                ]
                             }
                         },
                         {
                             "id": "4098294",
                             "name": {
-                                "value": "Alexander Avenue at Pace Street Eastbound"
+                                "value": "Alexander Avenue at Pace Street Eastbound",
+                                "synonyms": [
+                                    "Alexander",
+                                    "Alexander Avenue",
+                                    "Alexander"
+                                ]
                             }
                         },
                         {
                             "id": "4192460",
                             "name": {
-                                "value": "Oregon Street at Pace Street"
+                                "value": "Oregon Street at Pace Street",
+                                "synonyms": [
+                                    "oregon",
+                                    "Oregon"
+                                ]
                             }
                         },
                         {
@@ -107,7 +135,10 @@
                         {
                             "id": "4195826",
                             "name": {
-                                "value": "Campus Drive at Nasher Eastbound"
+                                "value": "Campus Drive at Nasher Eastbound",
+                                "synonyms": [
+                                    "Nasher"
+                                ]
                             }
                         },
                         {
@@ -122,7 +153,10 @@
                         {
                             "id": "4197174",
                             "name": {
-                                "value": "Devil's Bistro"
+                                "value": "Devil's Bistro",
+                                "synonyms": [
+                                    "Thrive"
+                                ]
                             }
                         },
                         {
