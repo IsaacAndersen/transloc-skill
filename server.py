@@ -121,7 +121,7 @@ def humanize_stops(stops):
 ################### API Handing 
 
 request_headers = {
-    "X-Mashape-Key": "AlnhnOmDSUmshGo5NruF8cHoYuHZp10ExI0jsnVyUrVkDc3H4Y",
+    "X-Mashape-Key": "MASHAPE API KEY HERE", # request a key at ===> https://market.mashape.com/transloc/openapi-1-2
     "Accept": "application/json"
 }
 
